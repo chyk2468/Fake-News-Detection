@@ -78,6 +78,10 @@ Confidence: 0.91
 
 ---
 
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9f2e332f-592c-4934-8d7a-0783825c38f9" />
+
+---
+
 ## 🔍 Project Structure
 
 ```
