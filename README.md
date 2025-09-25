@@ -74,6 +74,7 @@ Output:
 Prediction: Fake
 Confidence: 0.91
 ```
+<img width="1919" height="1073" alt="image" src="https://github.com/user-attachments/assets/69fefdcb-21b9-409a-9ca6-9aeda07f76a9" />
 
 ---
 
