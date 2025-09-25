@@ -1,17 +1,111 @@
-## Fake News Detection - Streamlit App
+# 📰 Fake News Detection - Streamlit App
 
-### Setup
+This project is a **Streamlit-based Fake News Detection System** that classifies news articles as either **Fake** or **Real**. It automatically trains a **Logistic Regression + TF-IDF pipeline** on local datasets (`True.csv` and `Fake.csv`) or loads a pre-trained `model.pkl`.
+
+---
+
+## 📁 Project Files
+
+* `True.csv` — Dataset containing genuine news articles.
+* `Fake.csv` — Dataset containing fake news articles.
+* `app.py` — Main Streamlit application file.
+* `model.pkl` — Saved trained model (auto-created after training).
+* `README.md` — Project documentation.
+
+---
+
+## ⚙️ Features
+
+* Automatically detects and trains model on `True.csv` & `Fake.csv` if no model exists.
+* Uses **TF-IDF Vectorization** and **Logistic Regression** for classification.
+* Saves the trained model as `model.pkl` for faster reloading.
+* Predicts news authenticity in real-time from text input.
+* Displays prediction label (`Fake` or `Real`) and model confidence.
+* Provides sidebar info and app status messages.
+
+---
+
+## 🚀 Setup & Run
+
+### 1️⃣ Clone the repo
+
+```bash
+git clone https://github.com/chyk2468/fake-news-detection.git
+cd fake-news-detection
+```
+
+### 2️⃣ Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run
+### 3️⃣ Run Streamlit app
 
 ```bash
 streamlit run app.py
 ```
 
-Place `True.csv` and `Fake.csv` in the same folder as `app.py` (or upload them via the UI). The app trains a TF-IDF + Logistic Regression model, saves it as `model.pkl`, and supports single-text and CSV batch predictions.
+---
 
+## 📊 How It Works
 
+1. On startup:
+
+   * If `model.pkl` exists → loads the model.
+   * Else, checks for `True.csv` and `Fake.csv`, then trains and saves the model.
+2. User inputs a news article in the text box.
+3. The model predicts **Fake (0)** or **Real (1)** with a confidence score.
+4. Displays results interactively.
+
+---
+
+## 📑 Example Usage
+
+Input:
+
+```
+Breaking: Celebrity endorses miracle cure for COVID-19!
+```
+
+Output:
+
+```
+Prediction: Fake
+Confidence: 0.91
+```
+
+---
+
+## 🔍 Project Structure
+
+```
+fake-news-detection/
+│
+├── app.py
+├── True.csv
+├── Fake.csv
+├── model.pkl
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 📦 Requirements
+
+Create a `requirements.txt` with:
+
+```
+streamlit
+pandas
+numpy
+scikit-learn
+```
+
+---
+
+## ⚡ Author
+
+**Yashwant Kumar Chitchula**
+B.Tech CSE (AI & ML), VIT Chennai
