@@ -1,116 +1,248 @@
-# 📰 Fake News Detection - Streamlit App
+<div align="center">
 
-This project is a **Streamlit-based Fake News Detection System** that classifies news articles as either **Fake** or **Real**. It automatically trains a **Logistic Regression + TF-IDF pipeline** on local datasets (`True.csv` and `Fake.csv`) or loads a pre-trained `model.pkl`.
+# 📰 Fake News Detection System
 
----
+### Real-Time News Authenticity Classifier powered by ML + Streamlit
 
-## 📁 Project Files
+[![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![TF-IDF](https://img.shields.io/badge/TF--IDF-NLP-blueviolet?style=for-the-badge)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-* `True.csv` — Dataset containing genuine news articles.
-* `Fake.csv` — Dataset containing fake news articles.
-* `app.py` — Main Streamlit application file.
-* `model.pkl` — Saved trained model (auto-created after training).
-* `README.md` — Project documentation.
+> A **Streamlit web application** that detects fake news in real-time using a **Logistic Regression + TF-IDF** pipeline trained on 44,000+ labeled news articles.
 
----
-
-## ⚙️ Features
-
-* Automatically detects and trains model on `True.csv` & `Fake.csv` if no model exists.
-* Uses **TF-IDF Vectorization** and **Logistic Regression** for classification.
-* Saves the trained model as `model.pkl` for faster reloading.
-* Predicts news authenticity in real-time from text input.
-* Displays prediction label (`Fake` or `Real`) and model confidence.
-* Provides sidebar info and app status messages.
+</div>
 
 ---
 
-## 🚀 Setup & Run
+## 🌟 Key Features
 
-### 1️⃣ Clone the repo
+| Feature | Description |
+|---------|-------------|
+| 🤖 **Auto-Training** | Trains model on `True.csv` & `Fake.csv` if no saved model exists |
+| 💾 **Model Persistence** | Saves trained model as `model.pkl` for instant reload on next launch |
+| ⚡ **Real-Time Prediction** | Classifies any pasted news article instantly |
+| 📊 **Confidence Score** | Shows how confident the model is in its prediction |
+| 🎨 **Interactive UI** | Clean Streamlit interface with sidebar info and status messages |
+| 🔠 **NLP Pipeline** | TF-IDF vectorization → Logistic Regression classification |
 
-```bash
-git clone https://github.com/chyk2468/fake-news-detection.git
-cd fake-news-detection
+---
+
+## 🖥️ App Preview
+
+**Fake News Detected:**
+
+<img width="1919" height="1073" alt="Fake prediction output" src="https://github.com/user-attachments/assets/69fefdcb-21b9-409a-9ca6-9aeda07f76a9" />
+
+---
+
+**Real News Detected:**
+
+<img width="1919" height="1079" alt="Real prediction output" src="https://github.com/user-attachments/assets/9f2e332f-592c-4934-8d7a-0783825c38f9" />
+
+---
+
+## ⚙️ How It Works
+
+```
+User pastes news article text
+           │
+           ▼
+  ┌──────────────────────┐
+  │  model.pkl exists?   │
+  └────────┬─────────────┘
+      No ──┤──── Yes
+           │         │
+           ▼         ▼
+  ┌──────────────┐  ┌───────────────┐
+  │ Load         │  │ Load saved    │
+  │ True.csv &   │  │ model.pkl     │
+  │ Fake.csv     │  └──────┬────────┘
+  └──────┬───────┘         │
+         ▼                 │
+  ┌──────────────┐         │
+  │ TF-IDF       │         │
+  │ Vectorize +  │         │
+  │ Train LR     │         │
+  └──────┬───────┘         │
+         ▼                 │
+  ┌──────────────┐         │
+  │  Save        │         │
+  │  model.pkl   │         │
+  └──────┬───────┘         │
+         └────────┬─────────┘
+                  ▼
+         ┌─────────────────┐
+         │ Predict: FAKE   │
+         │   or  REAL      │
+         │ + Confidence %  │
+         └─────────────────┘
 ```
 
-### 2️⃣ Install dependencies
+---
+
+## 📊 Dataset
+
+| File | Content | Size |
+|------|---------|------|
+| `True.csv` | Genuine news articles | ~21,000 articles |
+| `Fake.csv` | Fake / misinformation articles | ~23,000 articles |
+
+**Source:** [ISOT Fake News Dataset](https://www.kaggle.com/datasets/emineyetm/fake-news-detection-datasets) — widely used benchmark for fake news classification research.
+
+---
+
+## 🧠 Model Architecture
+
+### NLP Pipeline
+```
+Raw Text Input
+      │
+      ▼
+TF-IDF Vectorizer
+  ├── max_features = 5000
+  ├── stop_words = 'english'
+  └── ngram_range = (1, 2)
+      │
+      ▼
+Logistic Regression Classifier
+  ├── solver = 'lbfgs'
+  ├── max_iter = 1000
+  └── Output: [0 = Fake, 1 = Real] + Probabilities
+```
+
+**Why Logistic Regression + TF-IDF?**
+- ✅ Fast to train on large text corpora
+- ✅ Highly interpretable predictions
+- ✅ Strong baseline accuracy for binary text classification
+- ✅ Lightweight — no GPU required
+
+---
+
+## 🚀 Quick Start
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/chyk2468/Fake-News-Detection.git
+cd Fake-News-Detection
+```
+
+### 2️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run Streamlit app
+### 3️⃣ Launch the App
 
 ```bash
 streamlit run app.py
 ```
 
----
-
-## 📊 How It Works
-
-1. On startup:
-
-   * If `model.pkl` exists → loads the model.
-   * Else, checks for `True.csv` and `Fake.csv`, then trains and saves the model.
-2. User inputs a news article in the text box.
-3. The model predicts **Fake (0)** or **Real (1)** with a confidence score.
-4. Displays results interactively.
+> 💡 The app will automatically train the model on first launch using `True.csv` and `Fake.csv`. This takes ~30–60 seconds. Subsequent launches load instantly from `model.pkl`.
 
 ---
 
-## 📑 Example Usage
+## 📑 Example
 
-Input:
-
+**Input:**
 ```
 Breaking: Celebrity endorses miracle cure for COVID-19!
+Scientists baffled as underground lab reveals Earth is flat.
 ```
 
-Output:
+**Output:**
+```
+Prediction  :  🔴 FAKE
+Confidence  :  91.3%
+```
 
+**Input:**
 ```
-Prediction: Fake
-Confidence: 0.91
+Federal Reserve raises interest rates by 0.25% amid inflation concerns.
 ```
-<img width="1919" height="1073" alt="image" src="https://github.com/user-attachments/assets/69fefdcb-21b9-409a-9ca6-9aeda07f76a9" />
+
+**Output:**
+```
+Prediction  :  🟢 REAL
+Confidence  :  87.6%
+```
 
 ---
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9f2e332f-592c-4934-8d7a-0783825c38f9" />
-
----
-
-## 🔍 Project Structure
+## 📁 Project Structure
 
 ```
-fake-news-detection/
-│
-├── app.py
-├── True.csv
-├── Fake.csv
-├── model.pkl
-├── requirements.txt
-└── README.md
+📦 Fake-News-Detection/
+├── 📓 Fake News Spam Detection System.ipynb   # Exploratory notebook
+├── 🐍 app.py                                  # Streamlit application
+├── 📊 True.csv                                # Real news dataset
+├── 📊 Fake.csv                                # Fake news dataset
+├── 🤖 model.pkl                               # Saved trained model (auto-generated)
+├── 📋 requirements.txt                        # Python dependencies
+└── 📄 README.md                               # Project documentation
 ```
 
 ---
 
 ## 📦 Requirements
 
-Create a `requirements.txt` with:
-
 ```
-streamlit
-pandas
-numpy
-scikit-learn
+streamlit==1.38.0
+pandas==2.2.2
+numpy==2.0.1
+scikit-learn==1.5.2
+```
+
+Install all at once:
+```bash
+pip install -r requirements.txt
 ```
 
 ---
 
-## ⚡ Author
+## 📈 Evaluation Metrics
 
-**Yashwant Kumar Chitchula**
-B.Tech CSE (AI & ML), VIT Chennai
+| Metric | Description |
+|--------|-------------|
+| **Accuracy** | Overall correct predictions |
+| **Precision** | Of all predicted fakes, how many were actually fake |
+| **Recall** | Of all actual fakes, how many were correctly caught |
+| **F1-Score** | Harmonic mean of Precision and Recall |
+| **Confidence** | Model's predicted probability shown in the UI |
+
+---
+
+## 🛠️ Technologies Used
+
+<div align="center">
+
+| Category | Tool |
+|----------|------|
+| **Language** | Python 3.8+ |
+| **Web Framework** | Streamlit |
+| **Data Processing** | Pandas, NumPy |
+| **NLP** | Scikit-Learn TF-IDF |
+| **Classifier** | Logistic Regression |
+| **Model Persistence** | Pickle (`model.pkl`) |
+
+</div>
+
+---
+
+## 👤 Author
+
+**Yashwant Kumar Chitchula**  
+B.Tech CSE (AI & ML) — VIT Chennai
+
+[![GitHub](https://img.shields.io/badge/GitHub-chyk2468-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/chyk2468)
+
+---
+
+<div align="center">
+
+⭐ **Found this useful? Drop a star!** ⭐
+
+</div>
