@@ -1,87 +1,79 @@
 # Fake News Detection
 
-**The app transforms article text with TF-IDF and predicts a real/fake label with a Logistic Regression classifier trained from True.csv and Fake.csv.**
+**Classify news text with TF-IDF features and a Logistic Regression model.**
 
-[![Repository](https://img.shields.io/badge/GitHub-Source-24292f?logo=github)](https://github.com/chyk2468/Fake-News-Detection)
+[![GitHub](https://img.shields.io/badge/GitHub-Source-24292f?logo=github)](https://github.com/chyk2468/Fake-News-Detection)
 
 ## 1. Project Title & Tagline
 
-The app transforms article text with TF-IDF and predicts a real/fake label with a Logistic Regression classifier trained from True.csv and Fake.csv.
+Classify news text with TF-IDF features and a Logistic Regression model.
 
 ## 2. Problem Statement
 
-The app transforms article text with TF-IDF and predicts a real/fake label with a Logistic Regression classifier trained from `True.csv` and `Fake.csv`.
-
-This project matters because it provides a repeatable way to handle the task described above instead of relying entirely on a manual or ad hoc process.
+News articles and social posts can spread misleading claims quickly. This project demonstrates a text-classification pipeline that predicts a real/fake label from article text.
 
 ## 3. Project Preview
 
-No screenshot or GIF is currently linked in this README. Add a real application screenshot, recorded GIF, or public demo link when available.
+Add a real screenshot, GIF, or public demo here after recording the current application.
 
-[Browse repository files](https://github.com/chyk2468/Fake-News-Detection)
-
-[Open the interactive architecture](docs/architecture.html)
+[Interactive architecture explorer](architecture.html)
 
 ## 4. Overview
 
-The app transforms article text with TF-IDF and predicts a real/fake label with a Logistic Regression classifier trained from `True.csv` and `Fake.csv`.
+The application prepares text as TF-IDF features and uses a Logistic Regression classifier trained from `True.csv` and `Fake.csv`. The Streamlit UI presents the predicted label and a model score.
 
 ## 5. Key Features
 
-- Use the main interface or entry point to perform the project's documented task.
-- Review outputs before relying on them.
-- Check configuration and dependencies before running in a new environment.
+- Classifies pasted news text.
+- Uses TF-IDF text features.
+- Trains or loads a Logistic Regression model.
+- Displays the predicted class and a confidence-style score.
 
 ## 6. Architecture / Workflow
 
-![Fake News Detection animated workflow](docs/readme-architecture.svg)
+![Animated Fake News Detection workflow](readme-architecture.svg)
 
-The moving markers show the direction of the data flow. Open the [interactive architecture page](docs/architecture.html) to hover over or select a stage for more detail.
-
-1. Provide the required input.
-2. Run the project's main processing step.
-3. Review the output and any available metrics.
+The diagram animates the flow between stages. Open the [interactive architecture explorer](architecture.html) to select each stage and read its role.
 
 ## 7. Tech Stack
 
-**Stack:** Python, Pandas, scikit-learn, TF-IDF, Streamlit
+Python, Pandas, scikit-learn, TF-IDF, Logistic Regression, Streamlit
 
 ## 8. Installation & Setup
 
 ```bash
 git clone https://github.com/chyk2468/Fake-News-Detection.git
 cd Fake-News-Detection
+python -m venv .venv
+pip install -r requirements.txt
 ```
-
-Install the dependencies listed by the project and follow the configuration required by its entry point.
 
 ## 9. Usage
 
-1. Start the application using the command in Installation & Setup.
-2. Provide the input required by the interface or notebook.
-3. Inspect the generated output and check for errors.
+1. Run `streamlit run app.py`.
+2. Paste the news text into the input field.
+3. Submit it and inspect the predicted label and score.
+4. Treat the result as a model prediction, not a fact-checking verdict.
 
 ## 10. Project Structure
 
-The repository root contains the project's source and configuration files. Start with the main application or notebook entry point, then follow the imported modules.
+- `app.py`: Streamlit application
+- `Fake.csv`: fake-news training examples
+- `True.csv`: real-news training examples
+- `Fake News Spam Detection System.ipynb`: notebook exploration
+- `requirements.txt`: dependencies
 
 ## 11. Results & Demo
 
-No published benchmark or hosted demo is documented in the current README. Run the project locally and record representative outputs, screenshots, and metrics here.
-
-
+The repository contains labelled CSV datasets and a Jupyter notebook. Add measured precision, recall, F1-score, dataset split details, and a screenshot after running a reproducible evaluation.
 
 ## 12. Future Enhancements
 
-- Add tests for the main workflow and edge cases.
-- Improve input validation and error messages.
-- Document representative results and known limitations.
-- Prioritise additional features based on real usage.
+- Report precision, recall, F1-score, and a confusion matrix.
+- Test on recent and out-of-domain news.
+- Add explainability for influential words.
+- Make the interface clear that predictions can be wrong.
 
 ## 13. License
 
-Check the repository for a `LICENSE` file. If none is present, the project does not yet state explicit reuse and redistribution terms.
-
----
-
-[Source code](https://github.com/chyk2468/Fake-News-Detection) · [Interactive workflow](docs/architecture.html)
+Check for a repository `LICENSE` file before redistributing the code or datasets.
