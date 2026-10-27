@@ -16,7 +16,7 @@ News articles and social posts can spread misleading claims quickly. This projec
 
 Add a real screenshot, GIF, or public demo here after recording the current application.
 
-[Interactive architecture explorer](architecture.html)
+[Interactive architecture explorer](docs/architecture.html)
 
 ## 4. Overview
 
@@ -33,7 +33,7 @@ The application prepares text as TF-IDF features and uses a Logistic Regression 
 
 ![Animated Fake News Detection workflow](readme-architecture.svg)
 
-The diagram animates the flow between stages. Open the [interactive architecture explorer](architecture.html) to select each stage and read its role.
+The diagram animates the flow between stages. Open the [interactive architecture explorer](docs/architecture.html) to select each stage and read its role.
 
 ## 7. Tech Stack
 
