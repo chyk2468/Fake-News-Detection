@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+ <title id="title">Fake News Detection workflow</title><desc id="desc">A Streamlit interface that uses TF-IDF features and Logistic Regression to classify a submitted article as real or fake.</desc>
+ <rect width="1200" height="400" rx="18" fill="#F7F5F0"/>
+ <text x="56" y="42" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" letter-spacing="2.2" fill="#B64E45">PROJECT MAP  /  WORKFLOW</text>
+ <text x="56" y="78" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#202C3B">Fake News Detection</text>
+ <text x="56" y="105" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#6E777D">A text-classification pipeline for news articles.</text>
+ <line x1="56" y1="125" x2="1144" y2="125" stroke="#D9DED7" stroke-width="1"/>
+ <path d="M 300 237 L 330 237" stroke="#6E777D" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M 325 232 L 330 237 L 325 242" stroke="#6E777D" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M 584 237 L 614 237" stroke="#6E777D" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M 609 232 L 614 237 L 609 242" stroke="#6E777D" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M 868 237 L 898 237" stroke="#6E777D" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M 893 232 L 898 237 L 893 242" stroke="#6E777D" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><g>
+    <rect x="56" y="158" width="236" height="158" rx="12" fill="#FFFFFF" stroke="#D9DED7" stroke-width="1.4"/>
+    <rect x="56" y="158" width="236" height="5" rx="2.5" fill="#B64E45"/>
+    <text x="73" y="187" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" letter-spacing="1.6" fill="#B64E45">01 / ARTICLE TEXT</text>
+    <text x="73" y="221" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#202C3B">Paste the article</text>
+    <text x="73" y="249" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#6E777D">The interface accepts news text.</text>
+  </g><g>
+    <rect x="340" y="158" width="236" height="158" rx="12" fill="#FFFFFF" stroke="#D9DED7" stroke-width="1.4"/>
+    <rect x="340" y="158" width="236" height="5" rx="2.5" fill="#3F7C77"/>
+    <text x="357" y="187" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" letter-spacing="1.6" fill="#3F7C77">02 / TEXT FEATURES</text>
+    <text x="357" y="221" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#202C3B">Clean and vectorise</text>
+    <text x="357" y="249" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#6E777D">TF-IDF converts words to features.</text>
+  </g><g>
+    <rect x="624" y="158" width="236" height="158" rx="12" fill="#FFFFFF" stroke="#D9DED7" stroke-width="1.4"/>
+    <rect x="624" y="158" width="236" height="5" rx="2.5" fill="#A88950"/>
+    <text x="641" y="187" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" letter-spacing="1.6" fill="#A88950">03 / CLASSIFIER</text>
+    <text x="641" y="221" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#202C3B">Logistic Regression</text>
+    <text x="641" y="249" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#6E777D">Predict the learned class label.</text>
+  </g><g>
+    <rect x="908" y="158" width="236" height="158" rx="12" fill="#FFFFFF" stroke="#D9DED7" stroke-width="1.4"/>
+    <rect x="908" y="158" width="236" height="5" rx="2.5" fill="#B64E45"/>
+    <text x="925" y="187" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" letter-spacing="1.6" fill="#B64E45">04 / PREDICTION</text>
+    <text x="925" y="221" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#202C3B">Real or fake</text>
+    <text x="925" y="249" font-family="Arial,Helvetica,sans-serif" font-size="12.5" fill="#6E777D">Show the label and model confidence.</text>
+  </g>
+ <text x="56" y="358" font-family="Arial,Helvetica,sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#B64E45">IMPLEMENTATION NOTE</text>
+ <text x="56" y="380" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#6E777D">A model prediction is a screening signal, not independent fact verification.</text>
+</svg>
