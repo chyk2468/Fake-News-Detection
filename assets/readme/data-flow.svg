@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">Fake News Detection Data Flow</title>
+  <desc id="svg-desc">Ingress, Transformation, and Egress</desc>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120E08"/>
+      <stop offset="100%" stop-color="#1C1710"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#FBBF24"/>
+    </linearGradient>
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1C1710"/>
+      <stop offset="100%" stop-color="#120E08"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#F59E0B" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="340" rx="16" fill="url(#bgGrad)" stroke="#2E2419" stroke-width="1.5"/>
+  <rect x="0" y="0" width="1200" height="4" rx="2" fill="url(#accentGrad)"/>
+  <text x="48" y="46" fill="#F59E0B" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="2">FAKE NEWS DETECTION DATA FLOW</text>
+  <text x="48" y="70" fill="#FEF3C7" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700">Ingress, Transformation, and Egress</text>
+  <g filter="url(#glow)">
+    <rect x="48" y="100" width="260" height="204" rx="12" fill="#1C1710" stroke="#2E2419" stroke-width="1.2"/>
+    <rect x="48" y="100" width="260" height="5" rx="2.5" fill="#F59E0B"/>
+    <text x="64" y="132" fill="#F59E0B" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="1">01 / INGEST</text>
+    <text x="64" y="160" fill="#FEF3C7" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700">Raw Input</text>
+    <text x="64" y="188" fill="#D97706" font-family="system-ui, -apple-system, sans-serif" font-size="12">User prompt, uploaded</text>
+    <text x="64" y="206" fill="#D97706" font-family="system-ui, -apple-system, sans-serif" font-size="12">file, or event payload</text>
+  </g>
+  <path d="M 311 202.0 L 323 202.0" stroke="#D97706" stroke-width="1.8" stroke-dasharray="2,2"/>
+  <path d="M 319 198.0 L 324 202.0 L 319 206.0" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+  <g filter="url(#glow)">
+    <rect x="328" y="100" width="260" height="204" rx="12" fill="#1C1710" stroke="#2E2419" stroke-width="1.2"/>
+    <rect x="328" y="100" width="260" height="5" rx="2.5" fill="#FBBF24"/>
+    <text x="344" y="132" fill="#FBBF24" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="1">02 / PARSE</text>
+    <text x="344" y="160" fill="#FEF3C7" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700">Validation</text>
+    <text x="344" y="188" fill="#D97706" font-family="system-ui, -apple-system, sans-serif" font-size="12">Schema verification,</text>
+    <text x="344" y="206" fill="#D97706" font-family="system-ui, -apple-system, sans-serif" font-size="12">tokenization &amp;</text>
+    <text x="344" y="224" fill="#D97706" font-family="system-ui, -apple-system, sans-serif" font-size="12">normalization</text>
+  </g>
+  <path d="M 591 202.0 L 603 202.0" stroke="#D97706" stroke-width="1.8" stroke-dasharray="2,2"/>
+  <path d="M 599 198.0 L 604 202.0 L 599 206.0" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+  <g filter="url(#glow)">
+    <rect x="608" y="100" width="260" height="204" rx="12" fill="#1C1710" stroke="#2E2419" stroke-width="1.2"/>
+    <rect x="608" y="100" width="260" height="5" rx="2.5" fill="#F59E0B"/>
+    <text x="624" y="132" fill="#F59E0B" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="1">03 / PROCESS</text>
+    <text x="624" y="160" fill="#FEF3C7" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700">Core Logic</text>
+    <text x="624" y="188" fill="#D97706" font-family="system-ui, -apple-system, sans-serif" font-size="12">Model inference,</text>
+    <text x="624" y="206" fill="#D97706" font-family="system-ui, -apple-system, sans-serif" font-size="12">transformation, or</text>
+    <text x="624" y="224" fill="#D97706" font-family="system-ui, -apple-system, sans-serif" font-size="12">pipeline execution</text>
+  </g>
+  <path d="M 871 202.0 L 883 202.0" stroke="#D97706" stroke-width="1.8" stroke-dasharray="2,2"/>
+  <path d="M 879 198.0 L 884 202.0 L 879 206.0" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+  <g filter="url(#glow)">
+    <rect x="888" y="100" width="260" height="204" rx="12" fill="#1C1710" stroke="#2E2419" stroke-width="1.2"/>
+    <rect x="888" y="100" width="260" height="5" rx="2.5" fill="#FBBF24"/>
+    <text x="904" y="132" fill="#FBBF24" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="1">04 / PRESENT</text>
+    <text x="904" y="160" fill="#FEF3C7" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700">Output Delivery</text>
+    <text x="904" y="188" fill="#D97706" font-family="system-ui, -apple-system, sans-serif" font-size="12">Formatted UI</text>
+    <text x="904" y="206" fill="#D97706" font-family="system-ui, -apple-system, sans-serif" font-size="12">rendering, structured</text>
+    <text x="904" y="224" fill="#D97706" font-family="system-ui, -apple-system, sans-serif" font-size="12">JSON, or file save</text>
+  </g>
+</svg>
